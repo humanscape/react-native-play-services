@@ -19,7 +19,7 @@ PlayServices.sync = async () => {
   const status = PlayServices.checkPlayServicesStatus();
   switch (status) {
     case PlayServices.GooglePlayServicesStatus.GMS_DISABLED:
-      PlayServices.goToSettings();
+      PlayServices.goToSetting();
       break;
     case PlayServices.GooglePlayServicesStatus.GMS_NEED_UPDATE:
       PlayServices.goToMarket();
@@ -37,8 +37,8 @@ PlayServices.checkPlayServicesStatus = isAndroid
   ? PlayServices.checkPlayServicesStatus
   : async () => PlayServices.GooglePlayServicesStatus.AVAILABLE;
 
-PlayServices.goToSettings = isAndroid
-  ? PlayServices.goToSettings
+PlayServices.goToSetting = isAndroid
+  ? PlayServices.goToSetting
   : async () => {};
 
 PlayServices.goToMarket = isAndroid
