@@ -58,13 +58,13 @@ PlayServices.sync();
 // Customizable API
 
 (async () => {
-	const status = await PlayServices.checkPlayServicesStatus();
-	switch (status) {
-		case PlayServices.GooglePlayServicesStatus.GMS_DISABLED:
-			PlayServices.goToSetting();
-			break;
-		// handle anything.
-	}
+  const status = await PlayServices.checkPlayServicesStatus();
+  switch (status) {
+    case PlayServices.GooglePlayServicesStatus.GMS_DISABLED:
+      PlayServices.goToSetting();
+      break;
+    // handle anything.
+  }
 })();
 ```
 
