@@ -1,9 +1,9 @@
 package io.humanscape.opensources.playservices.provider;
 
-import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 
+import com.facebook.react.bridge.ReactApplicationContext;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 
@@ -12,7 +12,7 @@ import io.humanscape.opensources.playservices.GooglePlayServicesStatus;
 public class GoogleAPIProvider extends BaseProvider {
     private boolean isGmsEnabled;
 
-    public GoogleAPIProvider(Context context) {
+    public GoogleAPIProvider(ReactApplicationContext context) {
         super(context);
         this.initializeGMSStatus();
     }

@@ -1,11 +1,11 @@
 package io.humanscape.opensources.playservices.provider;
 
-import android.content.Context;
+import com.facebook.react.bridge.ReactApplicationContext;
 
 class BaseProvider {
-    Context context;
+    ReactApplicationContext context;
 
-    BaseProvider(Context context) {
+    BaseProvider(ReactApplicationContext context) {
         this.context = context;
     }
 }

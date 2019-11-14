@@ -1,20 +1,25 @@
 package io.humanscape.opensources.playservices.provider;
 
-import android.content.Context;
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.provider.Settings;
 
+import com.facebook.react.bridge.ReactApplicationContext;
 import com.google.android.gms.common.GoogleApiAvailability;
 
 public class NativeActionsProvider extends BaseProvider {
 
-    public NativeActionsProvider(Context context) {
+    public NativeActionsProvider(ReactApplicationContext context) {
         super(context);
     }
 
     private void runActivity(Intent intent) {
-        context.startActivity(intent);
+        Activity currentActivity = context.getCurrentActivity();
+        if (currentActivity == null) {
+            throw new NullPointerException();
+        }
+        currentActivity.startActivity(intent);
     }
 
     public void goToGooglePlayServicesSetting() {
