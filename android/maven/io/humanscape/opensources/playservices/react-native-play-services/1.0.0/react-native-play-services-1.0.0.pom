@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>io.humanscape.opensources.playservices</groupId>
+  <artifactId>react-native-play-services</artifactId>
+  <version>1.0.0</version>
+  <packaging>aar</packaging>
+  <name>React Native Play Services</name>
+  <description>TODO</description>
+  <url>https://github.com/humanscape/react-native-play-services</url>
+  <licenses>
+    <license>
+      <name>MIT</name>
+      <url>https://github.com/humanscape/react-native-play-services/blob/master/LICENSE</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>null</id>
+      <name>hw0k</name>
+    </developer>
+  </developers>
+  <dependencies>
+    <dependency>
+      <groupId>com.facebook.react</groupId>
+      <artifactId>react-native</artifactId>
+      <version>+</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.android.gms</groupId>
+      <artifactId>play-services-base</artifactId>
+      <version>17.1.0</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+</project>
