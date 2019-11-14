@@ -1,7 +1,9 @@
 # react-native-play-services
 
-![Stars](https://img.shields.io/github/stars/humanscape/react-native-play-services?style=flat-square&logo=github)
+![NPM](https://img.shields.io/npm/v/react-native-play-services?style=flat-square&logo=npm)
 ![LICENSE](https://img.shields.io/github/license/humanscape/react-native-play-services?style=flat-square&logo=license)
+![Stars](https://img.shields.io/github/stars/humanscape/react-native-play-services?style=flat-square&logo=github)
+[![Actions Status](https://github.com/humanscape/react-native-play-services/workflows/npm-auto-publish/badge.svg)](https://github.com/react-native-play-services/react-native-play-services/actions?style=flat-square)
 
 ### 사용하기 전에
 
