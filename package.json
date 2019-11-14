@@ -28,7 +28,6 @@
   },
   "devDependencies": {
     "react": "^16.8.3",
-    "react-native": "^0.60.5",
-    "ws": ">=3.3.1"
+    "react-native": "^0.60.5"
   }
 }
