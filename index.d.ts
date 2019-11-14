@@ -7,6 +7,7 @@ type GooglePlayServicesStatus = {
 
 declare module "react-native-play-services" {
   const GooglePlayServicesStatus: GooglePlayServicesStatus;
+  const checkPlayServicesStatus: () => Promise<void>;
   const sync: () => Promise<void>;
   const goToSetting: () => Promise<void>;
   const goToMarket: () => Promise<void>;

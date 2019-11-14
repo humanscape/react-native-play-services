@@ -2,7 +2,7 @@
   "name": "react-native-play-services",
   "title": "React Native Play Services",
   "version": "1.0.0",
-  "description": "TODO",
+  "description": "Use Google Play Services API in React Native.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,7 +13,10 @@
     "baseUrl": "https://github.com/humanscape/react-native-play-services"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "react",
+    "google-play",
+    "android"
   ],
   "author": {
     "name": "hw0k",
