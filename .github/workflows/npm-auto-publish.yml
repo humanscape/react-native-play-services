@@ -1,9 +1,8 @@
 name: npm-auto-publish
 
 on:
-  push:
-    branches: 
-    - master
+  release:
+    types: [published]
 
 jobs:
   build:
@@ -30,9 +29,9 @@ jobs:
       env:
         CI: true
         NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-    - name: GitHub Action for Slack
+    - name: Notify slack
       env:
-        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-      uses: Ilshidur/action-slack@1.6.2
+        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+      uses: pullreminders/slack-action@master
       with:
-        args: "We just released new version of react-native-play-services."
+        args: '{\"channel\":\"4_tech_deploy\",\"text\":\"A new version of `react-native-play-services` just released now!\"}'

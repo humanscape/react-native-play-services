@@ -11,7 +11,10 @@ PlayServices.GooglePlayServicesStatus = {
   INVALID: 30
 };
 
-PlayServices.sync = async () => {
+PlayServices.sync = async ({
+  onGmsDisabled = PlayServices.goToSetting,
+  onGmsNeedUpdate = PlayServices.goToMarket,
+}) => {
   if (!isAndroid) {
     return;
   }
@@ -19,10 +22,10 @@ PlayServices.sync = async () => {
   const status = PlayServices.checkPlayServicesStatus();
   switch (status) {
     case PlayServices.GooglePlayServicesStatus.GMS_DISABLED:
-      PlayServices.goToSetting();
+      onGmsDisabled();
       break;
     case PlayServices.GooglePlayServicesStatus.GMS_NEED_UPDATE:
-      PlayServices.goToMarket();
+      onGmsNeedUpdate();
       break;
     case PlayServices.GooglePlayServicesStatus.AVAILABLE:
       break;
