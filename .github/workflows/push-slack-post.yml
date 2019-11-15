@@ -1,0 +1,19 @@
+name: push-slack-post
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Notify slack
+      env:
+        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+      uses: pullreminders/slack-action@master
+      with:
+        args: '{\"channel\":\"4_tech_deploy\",\"text\":\"Someone pushed to `master` branch of `react-native-play-services`!\"}'
