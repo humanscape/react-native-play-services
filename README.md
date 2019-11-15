@@ -86,9 +86,11 @@ PlayServices.sync();
 - Functions
 	- `sync()`
 		- ```typescript
-			sync: () => Promise<void>;
+			sync: (params: { onGmsDisabled?: () => {}, onGmsNeedUpdate?: () => {} }) => Promise<void>;
 			```
 		- Google Play Services 상태를 최신으로 유지하는 동작을 실행합니다.
+		- onGmsDisabled가 없을 시, `goToSettings()` 함수를 실행합니다.
+		- onGmsNeedUpdate가 없을 시 `goToMarket()` 함수를 실행합니다.
 	- `checkPlayServicesStatus()`
 		- ```typescript
 			checkPlayServicesStatus: () => Promise<GooglePlayServicesStatus>;
