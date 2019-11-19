@@ -1,8 +1,8 @@
 import { NativeModules, Platform } from 'react-native';
 
-const { PlayServices } = NativeModules;
-
 const isAndroid = Platform.OS === 'android';
+
+const PlayServices = isAndroid ? NativeModules.PlayServices : {};
 
 PlayServices.GooglePlayServicesStatus = {
   AVAILABLE: 10,
@@ -10,6 +10,18 @@ PlayServices.GooglePlayServicesStatus = {
   GMS_NEED_UPDATE: 21,
   INVALID: 30
 };
+
+PlayServices.checkPlayServicesStatus = isAndroid
+  ? PlayServices.checkPlayServicesStatus
+  : async () => PlayServices.GooglePlayServicesStatus.AVAILABLE;
+
+PlayServices.goToSetting = isAndroid
+  ? PlayServices.goToSetting
+  : async () => {};
+
+PlayServices.goToMarket = isAndroid
+  ? PlayServices.goToMarket
+  : async () => {};
 
 PlayServices.sync = async ({
   onGmsDisabled = PlayServices.goToSetting,
@@ -35,17 +47,5 @@ PlayServices.sync = async ({
       throw error;
   }
 };
-
-PlayServices.checkPlayServicesStatus = isAndroid
-  ? PlayServices.checkPlayServicesStatus
-  : async () => PlayServices.GooglePlayServicesStatus.AVAILABLE;
-
-PlayServices.goToSetting = isAndroid
-  ? PlayServices.goToSetting
-  : async () => {};
-
-PlayServices.goToMarket = isAndroid
-  ? PlayServices.goToMarket
-  : async () => {};
 
 export default PlayServices;
