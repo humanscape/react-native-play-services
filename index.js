@@ -31,7 +31,7 @@ PlayServices.sync = async ({
     return;
   }
 
-  const status = PlayServices.checkPlayServicesStatus();
+  const status = await PlayServices.checkPlayServicesStatus();
   switch (status) {
     case PlayServices.GooglePlayServicesStatus.GMS_DISABLED:
       onGmsDisabled();
