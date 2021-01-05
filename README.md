@@ -1,6 +1,6 @@
 # react-native-play-services
 
-EN | [KO](https://github.com/humanscape/react-native-play-services/blob/master/README.md)
+EN | [KO](https://github.com/humanscape/react-native-play-services/blob/master/README.ko.md)
 
 ![NPM](https://img.shields.io/npm/v/react-native-play-services?style=flat-square&logo=npm)
 ![LICENSE](https://img.shields.io/github/license/humanscape/react-native-play-services?style=flat-square&logo=license)
