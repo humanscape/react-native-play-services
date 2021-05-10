@@ -9,16 +9,16 @@ EN | [KO](https://github.com/humanscape/react-native-play-services/blob/master/R
 
 ### Notes
 
-This library was made based on `React Native 0.60.5+`. It's not recommended for under `0.60.5`, so upgrade your React Native version to `0.60.5` or later.
+This library is made based on `React Native 0.60.5+`. It's not recommended for under `0.60.5`, so upgrade your React Native version to `0.60.5` or later.
 
 [React Native Official Docs - Upgrading to new React Native versions](https://facebook.github.io/react-native/docs/upgrading)
 
 ### Introduction
 
-This library can to use Google Play Services API in React Native.
+This library helps using Google Play Services API in React Native.
 
 #### Features
-- Determine can to use Google Play Services.
+- Check whether Google Play Services is available
 - Go to the Settings page to enable Google Play Services
 - Go to the Play Store link to update Google Play Services
 
@@ -38,7 +38,7 @@ $ yarn add react-native-play-services
 
 1. Open `android/app/src/main/java/[...]/MainApplication.java`.
   - Put `import io.humanscape.opensources.playservices.PlayServicesPackage;` at the top of file.
-  - Add `new PlayServicesPackage()` in array returns from `getPackages()` method.
+  - Add `new PlayServicesPackage()` to returning array of `getPackages()` method.
 2. Add these lines to `android/settings.gradle`.
   	```gradle
   	include ':react-native-play-services'
@@ -75,7 +75,7 @@ PlayServices.sync();
 - Constants
 	- `GooglePlayServicesStatus`
 		- `GooglePlayServicesStatus.AVAILABLE`
-			- Can use Google Play Services.
+			- Google Play Services is available.
 		- `GooglePlayServicesStatus.GMS_DISABLED`
 			- Google Play Services is disabled.
 			- Need to enable at app settings.
@@ -83,28 +83,28 @@ PlayServices.sync();
 			- Google Play Services is outdated.
 			- Need to update at Play Store.
 		- `GooglePlayServicesStatus.INVALID`
-			- Google Play Services status is unknown.
+			- Unable to configure Google Play Services.
 
 - Functions
 	- `sync()`
 		- ```typescript
 			sync: (params: { onGmsDisabled?: () => {}, onGmsNeedUpdate?: () => {} }) => Promise<void>;
 			```
-		- Perform all of actions for keeping Google Play Services status up to date.
-		- `onGmsDisabled` is not specified, it will execute `goToSettings()`.
-		- `onGmsNeedUpdate` is not specified, it will execute `goToMarket()`.
+		- Performs all actions for keeping Google Play Services status up to date.
+		- If `onGmsDisabled` is not specified, it will execute `goToSettings()`.
+		- If `onGmsNeedUpdate` is not specified, it will execute `goToMarket()`.
 	- `checkPlayServicesStatus()`
 		- ```typescript
 			checkPlayServicesStatus: () => Promise<GooglePlayServicesStatus>;
 			```
-		- Check Google Play Services status, and return `GooglePlayServicesStatus`.
+		- Checks Google Play Services status, and return `GooglePlayServicesStatus`.
 	- `goToSetting()`
 		- ```typescript
 			goToSetting: () => Promise<void>;
 			```
-		- Go to app settings can enable Google Play Services.
+		- Opens Setting page to enable Google Play Services.
 	- `goToMarket()`
 		- ```typescript
 			goToMarket: () => Promise<void>;
 			```
-		- Open Play Store link can update Google Play Services.
+		- Opens Play Store link to update Google Play Services.
